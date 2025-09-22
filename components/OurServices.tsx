@@ -63,9 +63,9 @@ const OurServicesSection = () => {
   ];
 
   return (
-    <section id="ourServices" className="py-16 px-6 bg-[#071022] text-white" dir="rtl">
+    <section id="ourServices" className="py-16 px-6 bg-gradient-to-br from-[#9ee2ff] via-slate-200 to-slate-200 text-gray-900" dir="rtl">
       <div className="max-w-7xl mx-auto">
-        <h3 className="text-center text-gray-400 mb-8">كل ما تحتاجه لإدارة حياتك المالية والشخصية في مكان واحد</h3>
+        <h3 className="text-center text-gray-900 mb-8">كل ما تحتاجه لإدارة حياتك المالية والشخصية في مكان واحد</h3>
 
         <Swiper
           modules={[Pagination, Autoplay, Navigation]}
@@ -84,7 +84,7 @@ const OurServicesSection = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                   {/* Left card: mimic large rounded panel */}
                   <div className="relative">
-                    <div className="rounded-2xl bg-[#0b1622] border border-slate-700/30 p-8 shadow-2xl shadow-black/60">
+                    <div className="rounded-2xl bg-[#5433FF] border border-slate-700/30 p-8 shadow-2xl shadow-black/60">
                       {/* small tag */}
                       <div className="flex justify-start mb-4">
                         <div className="inline-flex items-center gap-2 bg-[#06202a] px-3 py-1 rounded-full border border-slate-700/20">
@@ -102,9 +102,9 @@ const OurServicesSection = () => {
                             </div>
 
                             <div>
-                              <p className="text-sm text-emerald-100">الخدمة</p>
-                              <p className="text-2xl font-extrabold text-white">{service.title}</p>
-                              <p className="text-sm text-gray-300 mt-1 max-w-xl">{service.description}</p>
+                              <p className="text-sm text-gray-900">الخدمة</p>
+                              <p className="text-2xl font-extrabold text-gray-900">{service.title}</p>
+                              <p className="text-sm text-gray-900 mt-1 max-w-xl">{service.description}</p>
                             </div>
                           </div>
                         </div>
@@ -160,33 +160,33 @@ const OurServicesSection = () => {
                   <div className="pl-6">
                     <div className="flex items-start gap-6">
                       <div className="w-20 h-20 rounded-2xl bg-gradient-to-tr from-emerald-500 to-sky-500 flex items-center justify-center shadow-lg">
-                        <Shield className="w-10 h-10 text-white" />
+                        <Shield className="w-10 h-10 text-gray-900" />
                       </div>
 
                       <div>
                         <h2 className="text-3xl font-extrabold">{service.title}</h2>
-                        <p className="mt-3 text-gray-300 max-w-xl">{service.description}</p>
+                        <p className="mt-3 text-gray-800 max-w-xl">{service.description}</p>
 
                         <ul className="mt-6 space-y-3">
                           <li className="flex items-center gap-3">
                             <div className="w-8 h-8 rounded-full bg-[#06202a] flex items-center justify-center border border-slate-700/20">
                               <Check className="w-5 h-5 text-emerald-400" />
                             </div>
-                            <span className="text-gray-200">فريق الصيانة </span>
+                            <span className="text-gray-800">فريق الصيانة </span>
                           </li>
 
                           <li className="flex items-center gap-3">
                             <div className="w-8 h-8 rounded-full bg-[#06202a] flex items-center justify-center border border-slate-700/20">
                               <Check className="w-5 h-5 text-emerald-400" />
                             </div>
-                            <span className="text-gray-200">فريق التركيب</span>
+                            <span className="text-gray-800">فريق التركيب</span>
                           </li>
 
                           <li className="flex items-center gap-3">
                             <div className="w-8 h-8 rounded-full bg-[#06202a] flex items-center justify-center border border-slate-700/20">
                               <Check className="w-5 h-5 text-emerald-400" />
                             </div>
-                            <span className="text-gray-200">الفريق الفني</span>
+                            <span className="text-gray-800">الفريق الفني</span>
                           </li>
                         </ul>
                       </div>
@@ -198,8 +198,8 @@ const OurServicesSection = () => {
                       </div>
 
                       <div className="flex items-center gap-4">
-                        <button className="swiper-prev bg-[#071827] px-4 py-2 rounded-xl border border-slate-700/20">السابق</button>
-                        <button className="swiper-next bg-emerald-500 px-4 py-2 rounded-xl text-black font-semibold">التالي</button>
+                        <button className="swiper-prev bg-[#071827] px-4 py-2 rounded-xl border border-slate-700/20 text-white">السابق</button>
+                        <button className="swiper-next bg-[#5433FF] px-4 py-2 rounded-xl text-black font-semibold">التالي</button>
                       </div>
                     </div>
                   </div>
