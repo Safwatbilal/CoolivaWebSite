@@ -2,7 +2,7 @@ import React from "react";
 
 const ContactUs: React.FC = () => {
   return (
-    <section id="contactUs" dir="rtl" className="bg-[#1a2234] py-16 text-white">
+    <section id="contactUs" dir="rtl" className="bg-gradient-to-br from-[#9ee2ff] via-slate-200 to-slate-200 py-16 text-white">
       <div className="max-w-6xl mx-auto px-6">
         {/* Title */}
         <div className="text-center mb-12">

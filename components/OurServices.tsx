@@ -17,7 +17,7 @@ const OurServicesSection = () => {
       title: "تركيب الألواح لغرفة التبريد",
       description: "توريد وتركيب جميع الأنواع بمقاسات مختلفة. استخدام أفضل العوازل والمعدات.",
       icon: Snowflake,
-      iconBg: "bg-green-500",
+      iconBg: "bg-green-500/50",
       iconColor: "text-white"
     },
     {
@@ -25,7 +25,7 @@ const OurServicesSection = () => {
       title: "تصميم وتنفيذ غرف التبريد الصناعية و التجارية",
       description: "تجهيز وعزل سيارات النقل المبرد. تركيب وحدات تبريد عالية الكفاءة.",
       icon: Truck,
-      iconBg: "bg-purple-500",
+      iconBg: "bg-purple-500/50",
       iconColor: "text-white"
     },
     {
@@ -33,7 +33,7 @@ const OurServicesSection = () => {
       title: "انظمة التبريد المتنقلة",
       description: "تركيب وحدات تبريد متنوعة للمصانع، المخازن، المطاعم.",
       icon: Settings,
-      iconBg: "bg-orange-500",
+      iconBg: "bg-orange-500/50",
       iconColor: "text-white"
     },
     {
@@ -41,7 +41,7 @@ const OurServicesSection = () => {
       title: "لوحات التحكم",
       description: "صيانة دورية وسريعة. عقود سنوية أو حسب الطلب.",
       icon: TowerControl,
-      iconBg: "bg-blue-500",
+      iconBg: "bg-blue-500/50",
       iconColor: "text-white"
     },
     {
@@ -49,7 +49,7 @@ const OurServicesSection = () => {
       title: " نظام مراقبة درجة الحرارة",
       description: "صيانة دورية وسريعة. عقود سنوية أو حسب الطلب.",
       icon: WaypointsIcon,
-      iconBg: "bg-pink-500",
+      iconBg: "bg-pink-500/50",
       iconColor: "text-white"
     },
     {
@@ -57,7 +57,7 @@ const OurServicesSection = () => {
       title: "صيانة شاملة",
       description: "صيانة دورية وسريعة. عقود سنوية أو حسب الطلب.",
       icon: Wrench,
-      iconBg: "bg-yellow-500",
+      iconBg: "bg-yellow-500/50",
       iconColor: "text-white"
     }
   ];
