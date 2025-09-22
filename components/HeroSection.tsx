@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FaRegStar } from "react-icons/fa";
 import HeroTable from "./HeroTable"; // Corrected import
 import { FaArrowDown } from "react-icons/fa";
-
+import { ImTruck } from "react-icons/im";
 const HeroSection = () => {
   return (
     <div id="heroSection" className="relative min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 flex flex-col justify-center items-center overflow-hidden">
@@ -39,9 +39,9 @@ const HeroSection = () => {
                 repeatType: "reverse",
                 ease: "easeInOut",
               }}
-              className="-mr-3 mt-118 hidden md:flex"
+              className="-mr-1 mt-118 hidden md:flex"
             >
-              <FaRegStar className="text-gray-500 bg-[#ffeb3b] text-4xl font-bold p-2 rounded-4xl shadow-lg shadow-[#ffeb3b]/30" />
+              <ImTruck className="text-gray-500 bg-[#ffeb3b] text-4xl font-bold p-2 rounded-4xl shadow-lg shadow-[#ffeb3b]/30" />
             </motion.div>
             <div className="flex items-center justify-center w-50 h-50 md:w-110 md:h-130 rounded-lg bg-slate-800/40 backdrop-blur-sm border border-slate-700/50">
               <HeroTable />

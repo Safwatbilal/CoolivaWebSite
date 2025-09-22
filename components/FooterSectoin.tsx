@@ -4,7 +4,7 @@ import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn } from "react-icons/f
 const Footer: React.FC = () => {
   return (
     <footer dir="rtl" className="bg-[#0e1525] text-gray-300 pt-16 pb-10 relative">
-      <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-5 gap-10 border-b border-gray-700 pb-10">
+      <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-5 gap-10  border-gray-700 pb-10">
         {/* Column 1 - Company Info */}
         <div className="md:col-span-2">
           <h3 className="text-xl font-bold text-blue-400 mb-4">كوليفا</h3>
@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
             والمحتوى الإبداعي، والتعليم التحويلي.
           </p>
           <p className="flex items-center gap-2">
-            <span>📧</span> info@cooliva.com.sa
+            <span>📧</span> info@cooliva.sa
           </p>
           <p className="flex items-center gap-2">
             <span>📍</span> الرياض، المملكة العربية السعودية
@@ -54,6 +54,12 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Column 5 - Legal */}
+
+      </div>  
+            <div
+        className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 border-gray-700 pb-10 justify-around"
+        >
+
         <div>
           <h4 className="font-bold mb-4">قانوني</h4>
           <ul className="space-y-2">
@@ -63,24 +69,8 @@ const Footer: React.FC = () => {
             <li>اللائحة العامة لحماية البيانات</li>
           </ul>
         </div>
-      </div>
 
-      {/* Newsletter */}
-      <div className="max-w-7xl mx-auto px-6 py-10 grid md:grid-cols-2 gap-10 border-b border-gray-700">
-        <div>
-          <h4 className="text-lg font-bold mb-3">ابق على اطلاع مع كوليفا</h4>
-          <p className="text-gray-400">
-            احصل على أحدث الرؤى حول التكنولوجيا والإبداع والتطوير الشخصي مباشرة في صندوق الوارد.
-            <br />
-            لا توجد رسائل مزعجة، يمكن إلغاء الاشتراك في أي وقت.
-          </p>
-        </div>
-        <div className="flex items-center justify-center gap-3">
-          <button className="bg-gradient-to-r from-blue-500 to-green-400 px-6 py-3 rounded-lg text-white font-bold">
-            ← اشترك
-          </button>
-        </div>
-      </div>
+
 
       {/* Social Links */}
       <div className="max-w-7xl mx-auto px-6 mt-8 flex flex-col md:flex-row items-center justify-between gap-6">
@@ -98,6 +88,7 @@ const Footer: React.FC = () => {
           <a href="#" className="w-10 h-10 flex items-center justify-center rounded-lg bg-gradient-to-r from-blue-500 to-green-400 text-white">
             <FaLinkedinIn />
           </a>
+        </div>
         </div>
       </div>
     </footer>

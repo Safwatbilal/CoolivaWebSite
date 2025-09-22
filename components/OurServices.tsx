@@ -1,12 +1,14 @@
-import React from 'react';
-import { 
-  Snowflake, 
-  Truck, 
-  Settings, 
-  Wrench ,
-  TowerControl,
-  WaypointsIcon
-} from 'lucide-react';
+"use client";
+
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Autoplay, Navigation } from "swiper/modules";
+import { Snowflake, Truck, Settings, Wrench, TowerControl, WaypointsIcon, Shield, Check } from "lucide-react";
+
+// Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 const OurServicesSection = () => {
   const services = [
@@ -41,15 +43,16 @@ const OurServicesSection = () => {
       icon: TowerControl,
       iconBg: "bg-blue-500",
       iconColor: "text-white"
-    }  ,  {
+    },
+    {
       id: 5,
       title: " نظام مراقبة درجة الحرارة",
       description: "صيانة دورية وسريعة. عقود سنوية أو حسب الطلب.",
       icon: WaypointsIcon,
       iconBg: "bg-pink-500",
       iconColor: "text-white"
-    }
-     ,  {
+    },
+    {
       id: 6,
       title: "صيانة شاملة",
       description: "صيانة دورية وسريعة. عقود سنوية أو حسب الطلب.",
@@ -60,54 +63,163 @@ const OurServicesSection = () => {
   ];
 
   return (
-    <section id='ourServices' className="min-h-screen bg-gradient-to-br from-slate-200 via-slate-200 to-slate-300 py-16 px-4 " dir='rtl'>
+    <section id="ourServices" className="py-16 px-6 bg-[#071022] text-white" dir="rtl">
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center bg-[#5433FF] backdrop-blur-sm border border-purple-500/30 rounded-full px-6 py-2 mb-8">
-            <span className="text-purple-300 text-sm font-medium">✨ الخدمات</span>
-          </div>
-          
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-            قوة لا محدودة لإدارة حياتك
-          </h2>
-          
-          <p className="text-gray-900 text-lg max-w-3xl mx-auto leading-relaxed">
-            اكتشف الإمكانيات الكاملة مع اشتراك <span className='text-[#20BDFF]'> Pro </span>واستمتع بحرية كاملة بدون حدود
-          </p>
-        </div>
+        <h3 className="text-center text-gray-400 mb-8">كل ما تحتاجه لإدارة حياتك المالية والشخصية في مكان واحد</h3>
 
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+        <Swiper
+          modules={[Pagination, Autoplay, Navigation]}
+          spaceBetween={40}
+          slidesPerView={1}
+          loop={true}
+          autoplay={{ delay: 4500, disableOnInteraction: false }}
+          pagination={{ clickable: true }}
+          navigation={{ nextEl: '.swiper-next', prevEl: '.swiper-prev' }}
+          className="relative"
+        >
           {services.map((service) => {
-            const IconComponent = service.icon;
+            const Icon = service.icon;
             return (
-              <div
-                key={service.id}
-                className="group relative bg-white backdrop-blur-sm border border-slate-700/50 rounded-3xl p-8 transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-purple-500/10"
-              >
-                {/* Icon */}
-                <div className={`inline-flex items-center justify-center w-16 h-16 ${service.iconBg} rounded-2xl mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                  <IconComponent className={`w-8 h-8 ${service.iconColor}`} />
-                </div>
+              <SwiperSlide key={service.id}>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                  {/* Left card: mimic large rounded panel */}
+                  <div className="relative">
+                    <div className="rounded-2xl bg-[#0b1622] border border-slate-700/30 p-8 shadow-2xl shadow-black/60">
+                      {/* small tag */}
+                      <div className="flex justify-start mb-4">
+                        <div className="inline-flex items-center gap-2 bg-[#06202a] px-3 py-1 rounded-full border border-slate-700/20">
+                          <span className="w-3 h-3 rounded-full bg-emerald-400" />
+                          <span className="text-sm text-emerald-300">{service.title.split(' ')[0]}</span>
+                        </div>
+                      </div>
 
-                {/* Content */}
-                <div className="space-y-4">
-                  <h3 className="text-xl font-bold text-gray-900 group-hover:text-[#20BDFF] transition-colors duration-300">
-                    {service.title}
-                  </h3>
-                  <p className="text-gray-900 leading-relaxed text-base">
-                    {service.description}
-                  </p>
-                </div>
+                      {/* Icon + title + description in a prominent block */}
+                      <div className="rounded-lg overflow-hidden mb-6">
+                        <div className={`h-28 flex items-center px-6 ${service.iconBg.replace('bg-', 'bg-')} bg-gradient-to-r`}>
+                          <div className="flex items-center gap-4">
+                            <div className={`inline-flex items-center justify-center w-16 h-16 ${service.iconBg} rounded-2xl group-hover:scale-110 transition-transform duration-300`}>
+                              <Icon className={`w-8 h-8 ${service.iconColor}`} />
+                            </div>
 
-                {/* Hover Effect Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-r from-purple-600/5 to-blue-600/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-              </div>
+                            <div>
+                              <p className="text-sm text-emerald-100">الخدمة</p>
+                              <p className="text-2xl font-extrabold text-white">{service.title}</p>
+                              <p className="text-sm text-gray-300 mt-1 max-w-xl">{service.description}</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* three feature rows to match look */}
+                      <div className="space-y-4">
+                        <div className="flex items-center justify-between bg-[#091821] border border-slate-700/20 rounded-xl px-5 py-4">
+                          <div className="flex items-center gap-3">
+                            <div className="w-10 h-10 rounded-md bg-[#0e2a2a] flex items-center justify-center text-sm text-gray-200">🔒</div>
+                            <span className="text-sm text-gray-300">الفريق الميداني</span>
+                          </div>
+                          <div className="flex items-center gap-3">
+                            <span className="text-emerald-400 text-sm">نشط</span>
+                            <span className="w-3 h-3 rounded-full bg-emerald-400" />
+                          </div>
+                        </div>
+
+                        <div className="flex items-center justify-between bg-[#091821] border border-slate-700/20 rounded-xl px-5 py-4">
+                          <div className="flex items-center gap-3">
+                            <div className="w-10 h-10 rounded-md bg-[#0e2a2a] flex items-center justify-center text-sm text-gray-200">🛡️</div>
+                            <span className="text-sm text-gray-300">الفريق الفني </span>
+                          </div>
+                          <div className="flex items-center gap-3">
+                            <span className="text-emerald-400 text-sm">نشط</span>
+                            <span className="w-3 h-3 rounded-full bg-emerald-400" />
+                          </div>
+                        </div>
+
+                        <div className="flex items-center justify-between bg-[#091821] border border-slate-700/20 rounded-xl px-5 py-4">
+                          <div className="flex items-center gap-3">
+                            <div className="w-10 h-10 rounded-md bg-[#0e2a2a] flex items-center justify-center text-sm text-gray-200">💾</div>
+                            <span className="text-sm text-gray-300">الفريق الهندسي</span>
+                          </div>
+                          <div className="flex items-center gap-3">
+                            
+                            <span className="text-emerald-400 text-sm">نشط</span>
+                            <span className="w-3 h-3 rounded-full bg-emerald-400" />
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* floating badges */}
+                    <div className="absolute -right-6 top-8 flex flex-col items-center gap-3">
+
+
+                    </div>
+                  </div>
+
+                  {/* Right column: title + description + checklist + controls */}
+                  <div className="pl-6">
+                    <div className="flex items-start gap-6">
+                      <div className="w-20 h-20 rounded-2xl bg-gradient-to-tr from-emerald-500 to-sky-500 flex items-center justify-center shadow-lg">
+                        <Shield className="w-10 h-10 text-white" />
+                      </div>
+
+                      <div>
+                        <h2 className="text-3xl font-extrabold">{service.title}</h2>
+                        <p className="mt-3 text-gray-300 max-w-xl">{service.description}</p>
+
+                        <ul className="mt-6 space-y-3">
+                          <li className="flex items-center gap-3">
+                            <div className="w-8 h-8 rounded-full bg-[#06202a] flex items-center justify-center border border-slate-700/20">
+                              <Check className="w-5 h-5 text-emerald-400" />
+                            </div>
+                            <span className="text-gray-200">فريق الصيانة </span>
+                          </li>
+
+                          <li className="flex items-center gap-3">
+                            <div className="w-8 h-8 rounded-full bg-[#06202a] flex items-center justify-center border border-slate-700/20">
+                              <Check className="w-5 h-5 text-emerald-400" />
+                            </div>
+                            <span className="text-gray-200">فريق التركيب</span>
+                          </li>
+
+                          <li className="flex items-center gap-3">
+                            <div className="w-8 h-8 rounded-full bg-[#06202a] flex items-center justify-center border border-slate-700/20">
+                              <Check className="w-5 h-5 text-emerald-400" />
+                            </div>
+                            <span className="text-gray-200">الفريق الفني</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div className="mt-10 flex items-center justify-between">
+                      <div className="flex items-center gap-3">
+                        {/* empty left area for alignment with image */}
+                      </div>
+
+                      <div className="flex items-center gap-4">
+                        <button className="swiper-prev bg-[#071827] px-4 py-2 rounded-xl border border-slate-700/20">السابق</button>
+                        <button className="swiper-next bg-emerald-500 px-4 py-2 rounded-xl text-black font-semibold">التالي</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </SwiperSlide>
             );
           })}
-        </div>
+
+          <div className="mt-8 flex justify-center">
+            <div className="swiper-pagination" />
+          </div>
+        </Swiper>
       </div>
+
+      <style jsx>{`
+        :global(.swiper-pagination) { margin-top: 1rem; }
+        :global(.swiper-pagination-bullet) { width: 10px !important; height: 10px !important; opacity: 0.4; background: #334155 !important; }
+        :global(.swiper-pagination-bullet-active) { opacity: 1; background: #10b981 !important; }
+        :global(.swiper-button-prev), :global(.swiper-button-next) { display: none; }
+      `}</style>
     </section>
   );
 };

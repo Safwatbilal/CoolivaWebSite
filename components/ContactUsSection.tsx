@@ -38,7 +38,7 @@ const ContactUs: React.FC = () => {
               ></textarea>
               <button
                 type="submit"
-                className="w-full py-3 bg-blue-600 rounded-lg hover:bg-blue-700 transition"
+                className="w-full py-3 bg-[#20BDFF] rounded-lg hover:bg-blue-700 transition"
               >
                 إرسال الطلب
               </button>
